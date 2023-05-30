@@ -1,1 +1,1 @@
-export { defalt } from "./App.vue";
+export { defalt } from "./App.vue"; 
