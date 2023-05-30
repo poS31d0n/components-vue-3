@@ -1,1 +1,1 @@
-export { defalt } from "./Radio.vue";
+export { default } from "./Radio.vue";
