@@ -1,0 +1,14 @@
+button {
+	width: 100%;
+	border: 1px solid white;
+	border-radius: 10px;
+}
+button.primary {
+  background: #FFD700;
+	color: #FFFFFF;
+}
+
+button.secondary {
+  background: #bbbbbb;
+	color: #000000;
+}

@@ -1,7 +1,12 @@
 <template>
-  <div>
-    <Input :disabled="disabled" :label="label" :placeholder="placeholder" :type="type" />
-  </div>
+  <main>
+    <Button :disabled="testButton.disabled" :tooltip="testButton.tooltip" :type="testButton.type" >
+      {{testButton.title}}
+    </Button>
+    <Checkbox></Checkbox>
+    <Radio></Radio>
+    <Input :disabled="testInput.disabled" :label="testInput.label" :placeholder="testInput.placeholder" :type="testInput.type" />
+  </main>
 </template>
 
 <script>
@@ -13,10 +18,25 @@
     components: { Button, Checkbox, Input, Radio },
     data() {
       return {
-        disabled: false,
-        label: "Hey !",
-        placeholder: "My name ...",
-        type: "input",
+        testButton: {
+          disabled: false,
+          title: "Name button",
+          tooltip: "this is a button",
+          type: "primary",
+        },
+        testCheckbox: {
+          
+        },
+        testRadio: {
+        
+        },
+        testInput: {
+          disabled: false,
+          label: "Hey !",
+          placeholder: "My name ...",
+          type: "input",
+        },
+        
       };
     }
   }
