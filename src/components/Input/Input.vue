@@ -35,12 +35,6 @@ export default {
       type: String,
     },
   },
-  emits: [ 'clickButton' ],
-    methods: {
-      clickB: function(event) {
-          this.$emit('clickButton', event)
-      }
-    }
 };
 </script>
 

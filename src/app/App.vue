@@ -1,67 +1,81 @@
 <template>
   <form @submit.prevent>
-    <Button :disabled="testButton.disabled" :tooltip="testButton.tooltip" :type="testButton.type" @clickButton="acceptButton">
-      {{testButton.title}}
+    <Button
+      :disabled="testButton.disabled"
+      :tooltip="testButton.tooltip"
+      :type="testButton.type"
+      @clickButton="acceptButton"
+    >
+      {{ testButton.title }}
     </Button>
 
-    <Checkbox :label="testCheckbox.label" :value="testCheckbox.value" @clickCheckbox="getValue"/>
+    <Checkbox
+      :label="testCheckbox.label"
+      :value="testCheckbox.value"
+      @clickCheckbox="getValue"
+    />
 
     <Radio :label="testRadio.label" :value="testRadio.value" />
 
-    <Input :disabled="testInput.disabled" :label="testInput.label" :placeholder="testInput.placeholder" :type="testInput.type" v-model="countElements" />
+    <Input
+      :disabled="testInput.disabled"
+      :label="testInput.label"
+      :placeholder="testInput.placeholder"
+      :type="testInput.type"
+      v-model="countElements"
+    />
   </form>
 </template>
 
 <script>
-  import { Button, Checkbox, Input, Radio } from "@/components";
+import { Button, Checkbox, Input, Radio } from "@/components";
 
-  export default {
-    name: "App",
-    components: { Button, Checkbox, Input, Radio },
-    data() {
-      return {
-        countElements: '',
-        dataCheckbox: [],
+export default {
+  name: "App",
+  components: { Button, Checkbox, Input, Radio },
+  data() {
+    return {
+      countElements: "",
+      dataCheckbox: [],
 
-
-        testButton: {
-          disabled: false,
-          title: "Name button",
-          tooltip: "this is a button",
-          type: "primary",
-        },
-
-        testCheckbox: {
-          label: "Over 18 years old",
-          value: "18+",
-        },
-
-        testRadio: {
-          label: "Male",
-          value: "male",
-        },
-
-        testInput: {
-          disabled: false,
-          label: "Hey !",
-          placeholder: "My name ...",
-          type: "input",
-        },
-        
-      };
-    },
-    methods: {
-      getValue(itemCheckbox){
-        if(this.dataCheckbox.find(item => item == itemCheckbox) === undefined)
-          this.dataCheckbox.push(itemCheckbox);
+      testButton: {
+        disabled: false,
+        title: "Name button",
+        tooltip: "this is a button",
+        type: "primary",
       },
-      acceptButton(itemButton){
-        console.log(itemButton)
+
+      testCheckbox: {
+        label: "Over 18 years old",
+        value: "18+",
       },
+
+      testRadio: {
+        label: "Male",
+        value: "male",
+      },
+
+      testInput: {
+        disabled: false,
+        label: "Hey !",
+        placeholder: "Your name ...",
+        type: "input",
+      },
+    };
+  },
+  methods: {
+    getValue(itemCheckbox) {
+      if (this.dataCheckbox.find((item) => item == itemCheckbox) === undefined)
+        this.dataCheckbox.push(itemCheckbox);
+      else this.dataCheckbox.splice(this.dataCheckbox.indexOf(itemCheckbox), 1);
     },
-  }
+    acceptButton(itemButton) {
+      console.log(itemButton);
+    },
+  },
+};
 </script>
 
 <style scoped>
-  @import "./App.scss";
+@import "./App.scss";
 </style>

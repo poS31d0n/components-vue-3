@@ -1,7 +1,7 @@
 <template>
-  <button :class="type" :disabled="disabled" :title="tooltip" @click="clickB" >
-      <slot/>
-    </button>
+  <button :class="type" :disabled="disabled" :title="tooltip" @click="clickB">
+    <slot></slot>
+  </button>
 </template>
 
 <script>
@@ -25,15 +25,15 @@ export default {
       type: String,
     },
   },
-  emits: [ 'clickButton' ],
-    methods: {
-      clickB: function(event) {
-          this.$emit('clickButton', event)
-      }
-    }
+  emits: ["clickButton"],
+  methods: {
+    clickB: function (event) {
+      this.$emit("clickButton", event);
+    },
+  },
 };
 </script>
 
 <style scoped>
-  @import "./Button.scss";
+@import "./Button.scss";
 </style>
