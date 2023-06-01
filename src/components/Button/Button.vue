@@ -1,5 +1,5 @@
 <template>
-  <button :class="type" :disabled="disabled" :title="tooltip" v-on.click="trigger">
+  <button :class="type" :disabled="disabled" :title="tooltip" @click="clickB" >
       <slot/>
     </button>
 </template>
@@ -25,14 +25,15 @@ export default {
       type: String,
     },
   },
-  methods: {
-    trigger: function () {
-      this.$emit('clickButton');
+  emits: [ 'clickButton' ],
+    methods: {
+      clickB: function(event) {
+          this.$emit('clickButton', event)
+      }
     }
-  },
 };
 </script>
 
-<style>
+<style scoped>
   @import "./Button.scss";
 </style>
