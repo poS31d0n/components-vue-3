@@ -1,5 +1,10 @@
 <template>
-  <button :class="type" :disabled="disabled" :title="tooltip" @click="clickB">
+  <button
+    :class="['button', `button_${type}`, { button_disabled: disabled }]"
+    :disabled="disabled"
+    :tooltip="tooltip"
+    @click="clickB"
+  >
     <slot></slot>
   </button>
 </template>
@@ -21,7 +26,7 @@ export default {
       type: String,
     },
     type: {
-      default: "primary",
+      default: "",
       type: String,
     },
   },

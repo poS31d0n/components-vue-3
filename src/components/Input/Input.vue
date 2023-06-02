@@ -1,5 +1,6 @@
 <template>
-  <label :for="label">
+  <div :class="['input', { input_disabled: disabled }]">
+    <label class="input_label"> {{ label }} </label>
     <input
       :disabled="disabled"
       :type="type"
@@ -7,6 +8,9 @@
       v-bind="$attrs"
       :value="modelValue"
     />
+  </div>
+  <label :for="label">
+    
   </label>
 </template>
 

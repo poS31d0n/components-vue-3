@@ -42,7 +42,7 @@ export default {
         disabled: false,
         title: "Name button",
         tooltip: "this is a button",
-        type: "primary",
+        type: "scondary",
       },
 
       testCheckbox: {
