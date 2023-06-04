@@ -32,7 +32,7 @@ export default {
   },
   emits: ["clickButton"],
   methods: {
-    clickB: function (event) {
+    clickB(event) {
       this.$emit("clickButton", event);
     },
   },

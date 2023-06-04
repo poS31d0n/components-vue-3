@@ -1,17 +1,16 @@
 <template>
   <div :class="['input', { input_disabled: disabled }]">
-    <label class="input_label"> {{ label }} </label>
+    <label class="input__label"> {{ label }} </label>
     <input
       :disabled="disabled"
       :type="type"
-      :placeholder="placeholder"
-      v-bind="$attrs"
+      :plaсeholder="plaсeholder"
       :value="modelValue"
+      class="input__input"
+      @input="$emit('update:modelValue', $event.target.value)"
+
     />
   </div>
-  <label :for="label">
-    
-  </label>
 </template>
 
 <script>
@@ -26,7 +25,7 @@ export default {
       default: "",
       type: String,
     },
-    plaseholder: {
+    plaсeholder: {
       default: "",
       type: String,
     },
@@ -39,9 +38,10 @@ export default {
       type: String,
     },
   },
+  emits: ['update:modelValue']
 };
 </script>
 
 <style scoped>
-@import "./Input.scss";
+  @import "./Input.scss";
 </style>

@@ -21,6 +21,6 @@
   };
 </script>
 
-<style>
+<style scoped>
   @import "./Radio.scss";
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent>
+  <div>
     <Button
       :disabled="testButton.disabled"
       :tooltip="testButton.tooltip"
@@ -18,13 +18,13 @@
     <Radio :label="testRadio.label" :value="testRadio.value" />
 
     <Input
+      v-model="inputElements"
       :disabled="testInput.disabled"
       :label="testInput.label"
-      :placeholder="testInput.placeholder"
+      :plaсeholder="testInput.plaсeholder"
       :type="testInput.type"
-      v-model="countElements"
     />
-  </form>
+  </div>
 </template>
 
 <script>
@@ -35,14 +35,14 @@ export default {
   components: { Button, Checkbox, Input, Radio },
   data() {
     return {
-      countElements: "",
+      inputElements: "",
       dataCheckbox: [],
 
       testButton: {
         disabled: false,
         title: "Name button",
         tooltip: "this is a button",
-        type: "scondary",
+        type: "primary",
       },
 
       testCheckbox: {
@@ -58,7 +58,7 @@ export default {
       testInput: {
         disabled: false,
         label: "Hey !",
-        placeholder: "Your name ...",
+        plaсeholder: "Your name ...",
         type: "input",
       },
     };
