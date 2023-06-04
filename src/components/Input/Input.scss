@@ -1,20 +1,21 @@
 
 .input {
-    display: flex;
-    text-align: center;
-    width: 100%;
-    border: 1px solid white;
-    border-radius: 10px;
+  display: flex;
+  text-align: center;
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 10px;
 
-  &__label {
-    
+  &.input__label {
+    color: red;
   }
-  &_input {
-  
+  &.input__input{
+    color: blue;
   }
   &_disabled {
     background: grey;
     color: black;
   }
 }
+
 
