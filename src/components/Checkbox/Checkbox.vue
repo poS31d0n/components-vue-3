@@ -1,6 +1,11 @@
 <template>
   <div class="checkbox">
-    <input class="checkbox__input" type="checkbox" :value="value" @click="inputC" /> 
+    <input
+      class="checkbox__input"
+      type="checkbox"
+      :value="value"
+      @click="inputC"
+    />
     <label class="checkbox__label"> {{ label }} </label>
   </div>
 </template>
