@@ -56,7 +56,7 @@ export default {
       },
 
       testInput: {
-        disabled: true,
+        disabled: false,
         label: "Hey !",
         placeholder: "Your name ...",
         type: "input",
