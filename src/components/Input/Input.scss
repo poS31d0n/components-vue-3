@@ -6,16 +6,18 @@
   border: 1px solid white;
   border-radius: 10px;
 
-  &.input__label {
-    color: red;
-  }
-  &.input__input{
-    color: blue;
-  }
   &_disabled {
     background: grey;
     color: black;
   }
+  
+  &__label {
+    color: red;
+  }
+  &__input{
+    color: blue;
+  }
+  
 }
 
 

@@ -4,7 +4,7 @@
     <input
       :disabled="disabled"
       :type="type"
-      :plaсeholder="plaсeholder"
+      :placeholder="placeholder"
       :value="modelValue"
       class="input__input"
       @input="$emit('update:modelValue', $event.target.value)"
@@ -25,7 +25,7 @@ export default {
       default: "",
       type: String,
     },
-    plaсeholder: {
+    placeholder: {
       default: "",
       type: String,
     },
@@ -42,6 +42,6 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   @import "./Input.scss";
 </style>

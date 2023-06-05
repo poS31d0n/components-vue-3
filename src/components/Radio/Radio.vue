@@ -1,7 +1,9 @@
 <template>
-  <label>
-    <input type="radio" :value="value"> {{ label }}
-  </label>
+  <div class="radio">
+    <input class="radio__input" type="radio" name="radio" :value="value"> 
+    <label class="radio__label"> {{ label }} </label>
+  </div>
+  
 </template>
 
 <script>
@@ -21,6 +23,6 @@
   };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   @import "./Radio.scss";
 </style>

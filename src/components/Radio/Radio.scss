@@ -1,13 +1,17 @@
-label {
+.radio {
   display: flex;
-
   align-items: center;
+  flex-direction: initial;
 
+  height: 20%;
   width: 100%;
-  height: 100%;
-  color: red;
-  &input {
-    
+
+  gap: 10px;
+
+  &__input {
+    margin: 0;
+  }
+  &__label {
   
   }
 }

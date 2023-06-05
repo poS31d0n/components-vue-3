@@ -2,7 +2,7 @@
   <button
     :class="['button', `button_${type}`, { button_disabled: disabled }]"
     :disabled="disabled"
-    :tooltip="tooltip"
+    :title="tooltip"
     @click="clickB"
   >
     <slot></slot>
@@ -39,6 +39,6 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @import "./Button.scss";
 </style>

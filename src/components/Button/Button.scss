@@ -1,20 +1,54 @@
 .button {
+
+
+	border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
+	border-radius: 4px;
+
 	width: 100%;
-	background: #FFFFFF;
-	color: #000000;
-	border: 1px solid white;
-	border-radius: 10px;
-	
+
+	&:hover { background-color: rgb(227, 227, 227);}
+
+
+
 	&_primary {
-		background: #FFD700;
-		color: #FFFFFF;
+		color: #ffffff;
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+		background-color: #006dcc;
+		border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+		&:hover { background-color: rgb(0, 80, 228);}
 	}
-	&_scondary {
-		background: transparent;
-		color: #FFD700;
+
+	&_info {
+		color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #49afcd;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+		&:hover { background-color: rgb(1, 161, 215);}
 	}
+
+	&_warning {
+		color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #faa732;
+		border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+		&:hover { background-color: rgb(245, 160, 1);}
+	}
+
+	&_success {
+		color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #5bb75b;
+		border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+		&:hover { background-color: rgb(1, 162, 1);}
+	}
+
+	
+
 	&_disabled {
-		background: grey;
-		color: #000000;
+		color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #363636;
+		border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+		&:hover {background-color: black;}
 	}
 }

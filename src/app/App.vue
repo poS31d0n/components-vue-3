@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="components">
     <Button
       :disabled="testButton.disabled"
       :tooltip="testButton.tooltip"
@@ -21,7 +21,7 @@
       v-model="inputElements"
       :disabled="testInput.disabled"
       :label="testInput.label"
-      :plaсeholder="testInput.plaсeholder"
+      :placeholder="testInput.placeholder"
       :type="testInput.type"
     />
   </div>
@@ -42,7 +42,7 @@ export default {
         disabled: false,
         title: "Name button",
         tooltip: "this is a button",
-        type: "primary",
+        type: "",
       },
 
       testCheckbox: {
@@ -58,7 +58,7 @@ export default {
       testInput: {
         disabled: false,
         label: "Hey !",
-        plaсeholder: "Your name ...",
+        placeholder: "Your name ...",
         type: "input",
       },
     };
@@ -76,6 +76,6 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @import "./App.scss";
 </style>

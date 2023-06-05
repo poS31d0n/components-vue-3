@@ -1,7 +1,8 @@
 <template>
-  <label>
-    <input type="checkbox" :value="value" @click="inputC" /> {{ label }}
-  </label>
+  <div class="checkbox">
+    <input class="checkbox__input" type="checkbox" :value="value" @click="inputC" /> 
+    <label class="checkbox__label"> {{ label }} </label>
+  </div>
 </template>
 
 <script>
@@ -27,6 +28,6 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @import "./Checkbox.scss";
 </style>
