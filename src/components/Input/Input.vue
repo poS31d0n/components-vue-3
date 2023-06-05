@@ -1,15 +1,14 @@
 <template>
   <div :class="['input', { input_disabled: disabled }]">
-    <label class="input__label"> {{ label }} </label>
     <input
+      @input="$emit('update:modelValue', $event.target.value)"
       :disabled="disabled"
       :type="type"
       :placeholder="placeholder"
       :value="modelValue"
       class="input__input"
-      @input="$emit('update:modelValue', $event.target.value)"
-
     />
+    <label class="input__label"> {{ label }} </label>
   </div>
 </template>
 
