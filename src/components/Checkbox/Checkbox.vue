@@ -5,8 +5,9 @@
       type="checkbox"
       :value="value"
       @click="inputC"
+      :id="value"
     />
-    <label class="checkbox__label"> {{ label }} </label>
+    <label :for="value" class="checkbox__label"> {{ label }} </label>
   </div>
 </template>
 

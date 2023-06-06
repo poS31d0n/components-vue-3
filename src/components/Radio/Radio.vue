@@ -1,7 +1,13 @@
 <template>
   <div class="radio">
-    <input class="radio__input" type="radio" name="radio" :value="value" />
-    <label class="radio__label"> {{ label }} </label>
+    <input
+      class="radio__input"
+      type="radio"
+      name="radio"
+      :value="value"
+      :id="value"
+    />
+    <label :for="value" class="radio__label"> {{ label }} </label>
   </div>
 </template>
 
