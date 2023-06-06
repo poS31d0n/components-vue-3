@@ -1,54 +1,46 @@
+@import '../../helpers/colors.scss';
+
 .button {
-
-
-	border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
-	border-radius: 4px;
+	border-color:		$color-black-second $color-black-second $color-black-second;
+	border-radius:	4px;
 
 	width: 100%;
 
-	&:hover { background-color: rgb(227, 227, 227);}
-
-
+	&:hover {background-color: $color-white-second}
 
 	&_primary {
-		color: #ffffff;
-		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-		background-color: #006dcc;
-		border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-		&:hover { background-color: rgb(0, 80, 228);}
+		color: 						$color-white;
+		text-shadow:			0 -1px 0 $color-black-second;
+		background-color: $color-primary;
+		border-color:			$color-black-second $color-black-second $color-black-second;
+		&:hover 					{background-color: $color-info-second}
 	}
-
 	&_info {
-		color: #ffffff;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    background-color: #49afcd;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-		&:hover { background-color: rgb(1, 161, 215);}
+		color: 						$color-white;
+    text-shadow: 			0 -1px 0 $color-black-second;
+    background-color: $color-info;
+    border-color: 		$color-black-second $color-black-second $color-black-second;
+		&:hover 					{background-color: $color-info-second}
 	}
-
 	&_warning {
-		color: #ffffff;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    background-color: #faa732;
-		border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-		&:hover { background-color: rgb(245, 160, 1);}
+		color: 						$color-white;
+    text-shadow: 			0 -1px 0 $color-black-second;
+    background-color: $color-warning;
+		border-color: 		$color-black-second $color-black-second $color-black-second;
+		&:hover 					{background-color: $color-warning-second}
 	}
-
 	&_success {
-		color: #ffffff;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    background-color: #5bb75b;
-		border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-		&:hover { background-color: rgb(1, 162, 1);}
+		color: 						$color-white;
+    text-shadow: 			0 -1px 0 $color-black-second;
+    background-color: $color-success;
+		border-color: 		$color-black-second $color-black-second $color-black-second;
+		&:hover 					{background-color: $color-success-second}
 	}
-
-	
-
 	&_disabled {
-		color: #ffffff;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    background-color: #363636;
-		border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-		&:hover {background-color: black;}
+		color: 						$color-white;
+    text-shadow: 			0 -1px 0 $color-black-second;
+    background-color: $color-disabled;
+		border-color: 		$color-black-second $color-black-second $color-black-second;
+		&:hover 					{background-color: $color-disabled-second}
 	}
 }
