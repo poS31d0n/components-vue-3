@@ -13,6 +13,7 @@
       :label="testCheckbox.label"
       :value="testCheckbox.value"
       @clickCheckbox="getValue"
+      :checked="testCheckbox.checked"
     />
 
     <Radio :label="testRadio.label" :value="testRadio.value" />
@@ -48,6 +49,7 @@ export default {
       testCheckbox: {
         label: "Over 18 years old",
         value: "18+",
+        checked: false,
       },
 
       testRadio: {
