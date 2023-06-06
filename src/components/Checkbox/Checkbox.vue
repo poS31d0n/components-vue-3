@@ -1,11 +1,12 @@
 <template>
   <div class="checkbox">
     <input
+      @click="inputC"
       class="checkbox__input"
       type="checkbox"
       :value="value"
-      @click="inputC"
       :id="value"
+      :checked="checked"
     />
     <label :for="value" class="checkbox__label"> {{ label }} </label>
   </div>
@@ -23,6 +24,10 @@ export default {
     value: {
       default: "",
       type: String,
+    },
+    checked: {
+      default: false,
+      type: Boolean,
     },
   },
   emits: ["clickCheckbox"],
