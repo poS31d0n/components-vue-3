@@ -6,28 +6,28 @@
 
 	&:hover {background-color: $color-white-second}
 
-	&_primary {
+	&-primary {
 		color: 						$color-white;
 		text-shadow:			0 -1px 0 $color-black-second;
 		background-color: $color-primary;
 		border-color:			$color-black-second;
 		&:hover 					{background-color: $color-info-second}
 	}
-	&_info {
+	&-info {
 		color: 						$color-white;
     text-shadow: 			0 -1px 0 $color-black-second;
     background-color: $color-info;
     border-color: 	  $color-black-second;
 		&:hover 					{background-color: $color-info-second}
 	}
-	&_warning {
+	&-warning {
 		color: 						$color-white;
     text-shadow: 			0 -1px 0 $color-black-second;
     background-color: $color-warning;
 		border-color: 	  $color-black-second;
 		&:hover 					{background-color: $color-warning-second}
 	}
-	&_success {
+	&-success {
 		color: 						$color-white;
     text-shadow: 			0 -1px 0 $color-black-second;
     background-color: $color-success;
@@ -39,6 +39,6 @@
     text-shadow: 			0 -1px 0 $color-black-second;
     background-color: $color-disabled;
 		border-color: 		$color-black-second;
-		&:hover 					{background-color: $color-disabled-second}
+		&:hover 					{background-color: $color-disabled}
 	}
 }
