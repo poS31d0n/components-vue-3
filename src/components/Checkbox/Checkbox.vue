@@ -17,6 +17,10 @@ export default {
   name: "Checkbox",
 
   props: {
+    checked: {
+      default: false,
+      type: Boolean,
+    },
     label: {
       default: "",
       type: String,
@@ -24,10 +28,6 @@ export default {
     value: {
       default: "",
       type: String,
-    },
-    checked: {
-      default: false,
-      type: Boolean,
     },
   },
   emits: ["clickCheckbox"],

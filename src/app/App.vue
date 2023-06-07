@@ -16,7 +16,7 @@
       :checked="testCheckbox.checked"
     />
 
-    <Radio :label="testRadio.label" :value="testRadio.value" />
+    <Radio :label="testRadio.label" :value="testRadio.value" :checked="testRadio.checked"/>
 
     <Input
       v-model="inputElements"
@@ -47,12 +47,12 @@ export default {
       },
 
       testCheckbox: {
+        checked: false,
         label: "Over 18 years old",
         value: "18+",
-        checked: false,
       },
-
       testRadio: {
+        checked: false,
         label: "Male",
         value: "male",
       },

@@ -4,6 +4,7 @@
       class="radio__input"
       type="radio"
       name="radio"
+      :checked="checked"
       :value="value"
       :id="value"
     />
@@ -16,6 +17,10 @@ export default {
   name: "Radio",
 
   props: {
+    checked: {
+      default: false,
+      type: Boolean,
+    },
     label: {
       default: "",
       type: String,
