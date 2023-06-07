@@ -1,7 +1,5 @@
-@import '../../helpers/colors.scss';
-
 .button {
-	border-color:		$color-black-second $color-black-second $color-black-second;
+	border-color:		$color-black-second;
 	border-radius:	4px;
 
 	width: 100%;
@@ -12,35 +10,35 @@
 		color: 						$color-white;
 		text-shadow:			0 -1px 0 $color-black-second;
 		background-color: $color-primary;
-		border-color:			$color-black-second $color-black-second $color-black-second;
+		border-color:			$color-black-second;
 		&:hover 					{background-color: $color-info-second}
 	}
 	&_info {
 		color: 						$color-white;
     text-shadow: 			0 -1px 0 $color-black-second;
     background-color: $color-info;
-    border-color: 		$color-black-second $color-black-second $color-black-second;
+    border-color: 	  $color-black-second;
 		&:hover 					{background-color: $color-info-second}
 	}
 	&_warning {
 		color: 						$color-white;
     text-shadow: 			0 -1px 0 $color-black-second;
     background-color: $color-warning;
-		border-color: 		$color-black-second $color-black-second $color-black-second;
+		border-color: 	  $color-black-second;
 		&:hover 					{background-color: $color-warning-second}
 	}
 	&_success {
 		color: 						$color-white;
     text-shadow: 			0 -1px 0 $color-black-second;
     background-color: $color-success;
-		border-color: 		$color-black-second $color-black-second $color-black-second;
+		border-color: 	  $color-black-second;
 		&:hover 					{background-color: $color-success-second}
 	}
 	&_disabled {
 		color: 						$color-white;
     text-shadow: 			0 -1px 0 $color-black-second;
     background-color: $color-disabled;
-		border-color: 		$color-black-second $color-black-second $color-black-second;
+		border-color: 		$color-black-second;
 		&:hover 					{background-color: $color-disabled-second}
 	}
 }
