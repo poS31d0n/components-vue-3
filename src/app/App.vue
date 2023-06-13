@@ -25,15 +25,21 @@
       :placeholder="testInput.placeholder"
       :type="testInput.type"
     />
+
+    <CheckboxGroup
+      @selectCheckbox="getValueGroup"
+      :items="testCheckboxGroup"
+      :value="valueCheckboxGroup"
+    />
   </div>
 </template>
 
 <script>
-import { Button, Checkbox, Input, Radio } from "@/components";
+import { Button, Checkbox, Input, Radio, CheckboxGroup } from "@/components";
 
 export default {
   name: "App",
-  components: { Button, Checkbox, Input, Radio },
+  components: { Button, Checkbox, Input, Radio, CheckboxGroup },
   data() {
     return {
       inputElements: "",
@@ -63,6 +69,15 @@ export default {
         placeholder: "Your name ...",
         type: "input",
       },
+
+      testCheckboxGroup: [
+        {id: 1, name: 'Games', value: 'games'},
+        {id: 2, name: 'Chess', value: 'chess'},
+        {id: 3, name: 'Football', value: 'football'},
+        {id: 4, name: 'Basketball', value: 'basketball'},
+        {id: 5, name: 'Hockey', value: 'hockey'},
+      ],
+      valueCheckboxGroup: [],
     };
   },
   methods: {
@@ -73,6 +88,11 @@ export default {
     },
     acceptButton(itemButton) {
       console.log(itemButton);
+    },
+    getValueGroup(value) {
+      if (this.valueCheckboxGroup.find((item) => item == value) === undefined)
+        this.valueCheckboxGroup.push(value);
+      else this.valueCheckboxGroup.splice(this.valueCheckboxGroup.indexOf(value), 1);
     },
   },
 };

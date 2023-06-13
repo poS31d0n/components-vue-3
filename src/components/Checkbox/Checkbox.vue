@@ -5,10 +5,10 @@
       class="checkbox__input"
       type="checkbox"
       :value="value"
-      :id="value"
+      :id="id"
       :checked="checked"
     />
-    <label :for="value" class="checkbox__label"> {{ label }} </label>
+    <label :for="id" class="checkbox__label"> {{ label }} </label>
   </div>
 </template>
 
@@ -20,6 +20,10 @@ export default {
     checked: {
       default: false,
       type: Boolean,
+    },
+    id: {
+      default: 0,
+      type: Number,
     },
     label: {
       default: "",

@@ -1,0 +1,14 @@
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  height: 100%;
+  width: 100%;
+
+  border-top: 1px solid $color-black-second;
+
+  padding-top: 10px;
+
+}
