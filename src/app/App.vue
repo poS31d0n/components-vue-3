@@ -31,6 +31,15 @@
       :placeholder="testInput.placeholder"
       :type="testInput.type"
     />
+
+    <Select
+      :disabled="testSelect.disabled"
+      :label="testSelect.label"
+      :multiple="testSelect.multiple"
+      :options="testSelect.options"
+      :placeholder="testSelect.placeholder"    
+    > </Select>
+
     <div class="group">
       <CheckboxGroup
         @selectCheckbox="getValueCheckbox"
@@ -53,9 +62,10 @@ import { Button, Checkbox, Input, Radio, CheckboxGroup, RadioGroup, Select } fro
 
 export default {
   name: "App",
-  components: { Button, Checkbox, Input, Radio, CheckboxGroup, RadioGroup, Select },
+  components: { Button, Checkbox, Input, Radio, CheckboxGroup, RadioGroup, Select, Select },
   data() {
     return {
+      ids: 1,
       inputElements: "",
       dataCheckbox: [],
 
@@ -96,16 +106,33 @@ export default {
       valueCheckboxGroup: [],
 
       testRadioGroup: [
-        {id: 8, name: 'Games', value: 'games'},
-        {id: 9, name: 'Chess', value: 'chess'},
-        {id: 10, name: 'Football', value: 'football'},
-        {id: 11, name: 'Basketball', value: 'basketball'},
-        {id: 12, name: 'Hockey', value: 'hockey'},
+        {id: 8, name: 'Bachelor', value: 'bachelor'},
+        {id: 9, name: 'Specialist-degree', value: 'specialist-degree'},
+        {id: 10, name: 'Postgraduate', value: 'postgraduate'},
+        {id: 11, name: 'Master', value: 'master'},
+        {id: 12, name: 'Doctorate', value: 'doctorate'},
       ],
       valueRadioGroup: '',
+
+      testSelect: {
+        disabled: false,
+        label: "Your age?",
+        multiple: false,
+        options: [
+          {id: 13, name: 'Child', value: 'child'},
+          {id: 14, name: 'Tween', value: 'tween'},
+          {id: 15, name: 'Teenager', value: 'teenager'},
+          {id: 16, name: 'Young adult', value: 'young-adult'},
+          {id: 17, name: 'Middle aged', value: 'middle-aged'},
+        ],
+        placeholder: "Select your age",
+      },
     };
   },
   methods: {
+    getId() {
+      return ids++;
+    },
     getValue(itemCheckbox) {
       if (this.dataCheckbox.find((item) => item == itemCheckbox) === undefined)
         this.dataCheckbox.push(itemCheckbox);

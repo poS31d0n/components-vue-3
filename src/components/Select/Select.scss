@@ -1,0 +1,10 @@
+.select {
+
+  
+  &_disabled {
+    color: 						$color-white;
+    text-shadow: 			0 -1px 0 $color-black-second;
+    background-color: $color-disabled;
+		border-color: 		$color-black-second;
+  }
+}

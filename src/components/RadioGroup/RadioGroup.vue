@@ -3,6 +3,7 @@
     <Radio
       v-for="item in items"
       :id="item.id"
+      :key="item.id"
       :label="item.name"
       :value="item.value"
       @clickRadio="getValue"
