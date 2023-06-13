@@ -1,0 +1,14 @@
+.radioGroup {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  height: 100%;
+  width: 100%;
+
+  border-top: 1px solid $color-black-second;
+  border-left: 1px solid $color-black-second;
+
+  padding: 10px 0px 0px 10px;
+}

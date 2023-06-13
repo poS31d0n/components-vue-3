@@ -22,13 +22,14 @@ export default {
       type: Array,
     },
     value: {
-      default: "",
-      type: String,
+      default: [],
+      type: Array,
     },
   },
   emits: ['selectCheckbox'],
   methods: {
     getValue: function (value) {
+      console.log(this.value);
       this.$emit("selectCheckbox", value);
     },
   },

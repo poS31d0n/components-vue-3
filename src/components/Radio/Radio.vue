@@ -1,14 +1,15 @@
 <template>
   <div class="radio">
     <input
+      @click="inputR"
       class="radio__input"
       type="radio"
       name="radio"
       :checked="checked"
       :value="value"
-      :id="value"
+      :id="id"
     />
-    <label :for="value" class="radio__label"> {{ label }} </label>
+    <label :for="id" class="radio__label"> {{ label }} </label>
   </div>
 </template>
 
@@ -21,6 +22,10 @@ export default {
       default: false,
       type: Boolean,
     },
+    id: {
+      default: 0,
+      type: Number,
+    },
     label: {
       default: "",
       type: String,
@@ -28,6 +33,12 @@ export default {
     value: {
       default: "",
       type: String,
+    },
+  },
+  emits: ["clickRadio"],
+  methods: {
+    inputR: function () {
+      this.$emit("clickRadio", this.value);
     },
   },
 };
