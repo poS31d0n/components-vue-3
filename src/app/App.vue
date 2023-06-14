@@ -65,7 +65,7 @@ export default {
   components: { Button, Checkbox, Input, Radio, CheckboxGroup, RadioGroup, Select, Select },
   data() {
     return {
-      ids: 1,
+      uuid: 0,
       inputElements: "",
       dataCheckbox: [],
 
@@ -117,7 +117,7 @@ export default {
       testSelect: {
         disabled: false,
         label: "Your age?",
-        multiple: false,
+        multiple: true,
         options: [
           {id: 13, name: 'Child', value: 'child'},
           {id: 14, name: 'Tween', value: 'tween'},
@@ -130,9 +130,6 @@ export default {
     };
   },
   methods: {
-    getId() {
-      return ids++;
-    },
     getValue(itemCheckbox) {
       if (this.dataCheckbox.find((item) => item == itemCheckbox) === undefined)
         this.dataCheckbox.push(itemCheckbox);

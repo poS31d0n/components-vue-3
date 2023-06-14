@@ -3,10 +3,13 @@
     :class="['select', { select_disabled: disabled }]"
     :name="label"
     :disabled="disabled"
-    :placeholder="placeholder"
     :multiple="multiple"
+    v-model="value"
+    @input="onChange($event)"
   >
+    <option disabled value=""> {{ placeholder }} </option>
     <option
+    
       v-for="item in options"
       :id="item.id"
       :key="item.id"
@@ -20,6 +23,11 @@
 <script>
 export default {
   name: "Select",
+  data() {
+    return {
+      value: [],
+    }
+  },
   props: {
     disabled: {
       default: false,
@@ -41,6 +49,17 @@ export default {
       default: "",
       type: String,
     },
+    modelValue: {
+      default: [],
+      type: Array,
+    }
+  },
+  emits: ['handleSelect'],
+  methods: {
+    onChange(event) {
+      this.value.push(event.target.value)
+      console.log(this.value);
+    }
   },
 };
 </script>
