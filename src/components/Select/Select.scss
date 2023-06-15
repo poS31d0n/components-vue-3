@@ -1,10 +1,45 @@
 .select {
 
-  
-  &_disabled {
-    color: 						$color-white;
-    text-shadow: 			0 -1px 0 $color-black-second;
-    background-color: $color-disabled;
-		border-color: 		$color-black-second;
+  width: 100%;
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  border: 1px solid $color-default-blue;
+  border-radius: 6px;
+  background-color: #fff;
+
+  padding: 10px 35px 10px 15px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  &::-ms-expand {
+    display: none;
   }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0px 0px 0px 1px $color-default-blue, 0px 0px 10px #7e9bbd;
+  }
+
+  &_multiple {
+    height: 100%;
+    padding: 0px;  
+  }
+  &_disabled {
+    text-shadow: 0 -1px 0 $color-black-second;
+    background-color: $color-disabled;
+  }
+  &__placeholted {
+    text-shadow: 0 -1px 0 $color-black-second;
+    background-color: $color-disabled-second;
+    border-bottom: 1px solid $color-default-blue;
+  }
+}
+option {
+  display: flex;
+  align-items: center;
 }

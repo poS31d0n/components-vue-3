@@ -1,23 +1,24 @@
 <template>
-  <select
-    :class="['select', { select_disabled: disabled }]"
-    :name="label"
-    :disabled="disabled"
-    :multiple="multiple"
-    v-model="value"
-    @input="onChange($event)"
-  >
-    <option disabled value=""> {{ placeholder }} </option>
-    <option
-    
-      v-for="item in options"
-      :id="item.id"
-      :key="item.id"
-      :value="item.value"
-    >
-      {{ item.name }}
-    </option>
-  </select>
+  <div class="form-group">
+    <div class="select-wrapper">
+      <select
+        :class="['select', {select_multiple: multiple} , { select_disabled: disabled }]"
+        :name="label"
+        :disabled="disabled"
+        :multiple="multiple"
+        @input="onChange($event)"
+      >
+        <option :class="{select__placeholted: multiple}" :label="placeholder" selected disabled value="0"></option>
+        <option
+          v-for="item in options"
+          :id="item.id"
+          :key="item.id"
+          :value="item.value"
+          :label="item.name"
+        ></option>
+      </select>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -26,7 +27,7 @@ export default {
   data() {
     return {
       value: [],
-    }
+    };
   },
   props: {
     disabled: {
@@ -52,14 +53,14 @@ export default {
     modelValue: {
       default: [],
       type: Array,
-    }
+    },
   },
-  emits: ['handleSelect'],
+  emits: ["handleSelect"],
   methods: {
     onChange(event) {
-      this.value.push(event.target.value)
-      console.log(this.value);
-    }
+      // this.value.push(event.target.value)
+      console.log(event.target.value);
+    },
   },
 };
 </script>
