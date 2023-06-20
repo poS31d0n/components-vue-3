@@ -1,5 +1,5 @@
 <template>
-  <form class="radioGroup">
+  <div class="radioGroup">
     <Radio
       v-for="item in items"
       :id="item.id"
@@ -8,7 +8,7 @@
       :value="item.value"
       @clickRadio="getValue"
     />
-  </form>
+  </div>
 </template>
 <script>
 import { Radio } from "@/components";

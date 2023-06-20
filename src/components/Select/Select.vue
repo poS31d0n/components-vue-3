@@ -1,22 +1,14 @@
 <template>
-  <div class="form-group">
-    <div class="select-wrapper">
-      <select
-        :class="['select', {select_multiple: multiple} , { select_disabled: disabled }]"
-        :name="label"
-        :disabled="disabled"
-        :multiple="multiple"
-        @input="onChange($event)"
-      >
-        <option :class="{select__placeholted: multiple}" :label="placeholder" selected disabled value="0"></option>
-        <option
-          v-for="item in options"
-          :id="item.id"
-          :key="item.id"
-          :value="item.value"
-          :label="item.name"
-        ></option>
-      </select>
+  <div class="select">
+    <p class="title" :placeholder="placeholder" @click="areOptionsVisable = !areOptionsVisable">{{ title.join(', ') }}</p>
+    <div class="options" v-if="areOptionsVisable">
+      <p
+        v-for="item in options"
+        :id="item.id"
+        :value="item.value"
+        :name="item.name"
+        @click="handleClick(item)"
+      >{{ item.name }}</p>
     </div>
   </div>
 </template>
@@ -26,7 +18,8 @@ export default {
   name: "Select",
   data() {
     return {
-      value: [],
+      areOptionsVisable: true,
+      title: [],
     };
   },
   props: {
@@ -55,13 +48,16 @@ export default {
       type: Array,
     },
   },
-  emits: ["handleSelect"],
   methods: {
-    onChange(event) {
-      // this.value.push(event.target.value)
-      console.log(event.target.value);
-    },
-  },
+    handleClick(option) {
+
+      if(this.title.indexOf(option.name) >= 0)
+        this.title.splice(this.title.indexOf(option.name), 1)
+      else this.title.push(option.name);
+      
+      this.$emit('select', this.title);
+    }
+  }
 };
 </script>
 

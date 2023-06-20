@@ -38,6 +38,7 @@
       :multiple="testSelect.multiple"
       :options="testSelect.options"
       :placeholder="testSelect.placeholder"    
+      @select="selectOptions"
     > </Select>
 
     <div class="group">
@@ -65,7 +66,6 @@ export default {
   components: { Button, Checkbox, Input, Radio, CheckboxGroup, RadioGroup, Select, Select },
   data() {
     return {
-      uuid: 0,
       inputElements: "",
       dataCheckbox: [],
 
@@ -127,6 +127,7 @@ export default {
         ],
         placeholder: "Select your age",
       },
+      valueSelect: '',
     };
   },
   methods: {
@@ -145,6 +146,11 @@ export default {
     },
     getValueRadio(value) {
       this.valueRadioGroup = value;
+    },
+
+
+    selectOptions(option){
+      this.valueSelect = option
     }
   },
 };
