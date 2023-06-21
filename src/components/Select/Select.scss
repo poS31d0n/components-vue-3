@@ -1,67 +1,96 @@
 .select {
   position: relative;
   width: 100%;
-  cursor: pointer;
 
-  p { 
+
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid $color-border;
+  border-radius: 5px;
+
+  &:hover {
+    box-shadow: inset 0 1px 1px rgb($color-black, 0.075), 0 0 8px $color-default-blue;
+  }
+
+  p {
     margin: 0;
   }
 }
-.title{
-  border: 1px solid grey;
 
-}
-.options {
-  border: 1px solid grey;
+.titles {
+  display: flex;
+  flex-wrap: wrap;
 
-  p:hover {
-    background-color: #e7e7e7;
+  cursor: pointer;
+
+  gap: 5px;
+
+  min-height: 24px;
+
+  border: 1px solid $color-border;
+  border-radius: 5px;
+
+  &:checked,
+  &:not(:checked) {
+    box-shadow: inset 0 1px 1px rgb($color-black, 0.075), 0 0 8px $color-default-blue;
+  }
+
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+
+    padding: 1px 5px;
+    border-radius: 5px;
+
+    color: $color-white;
+    background-color: $color-default-blue;
   }
 }
 
+.options {
+  margin: 0;
+  padding: 0;
 
-// .select {
+  cursor: pointer;
 
-//   width: 100%;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 1px rgb($color-black, 0.075), 0 0 8px $color-default-blue;
 
-//   -moz-appearance: none;
-//   -webkit-appearance: none;
-//   appearance: none;
+  ::marker {
+    color: transparent;
+  }
 
-//   border: 1px solid $color-default-blue;
-//   border-radius: 6px;
-//   background-color: #fff;
+  &__option {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding: 0.375rem 0.75rem;
 
-//   padding: 10px 35px 10px 15px;
+    &:hover {
+      background-color: #f5f5f5;
+      cursor: pointer;
+      transition: 0.2s background-color ease-in-out;
+    }
 
-//   outline: none;
+    &_selected {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #e1f5fe;
 
-//   cursor: pointer;
+      &::after {
+        width: 0.75rem;
+        height: 0.75rem;
+        color: #0277bd;
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="svg-inline--fa fa-check fa-w-16" data-icon="check" data-prefix="fas" aria-hidden="true"%3E%3Cpath d="M33.964 85.547l-32.5-32.251a4.935 4.935 0 010-7.017l7.071-7.017a5.027 5.027 0 017.071 0L37.5 60.987l46.894-46.534a5.028 5.028 0 017.07 0l7.072 7.017a4.935 4.935 0 010 7.017l-57.5 57.06a5.027 5.027 0 01-7.072 0z" fill="%230277bd"/%3E%3C/svg%3E');
+        background-size: cover;
+        content: "";
+      }
+    }
+  }
+}
 
-//   &::-ms-expand {
-//     display: none;
-//   }
-
-//   &:focus {
-//     outline: none;
-//     box-shadow: 0px 0px 0px 1px $color-default-blue, 0px 0px 10px #7e9bbd;
-//   }
-
-//   &_multiple {
-//     height: 100%;
-//     padding: 0px;  
-//   }
-//   &_disabled {
-//     text-shadow: 0 -1px 0 $color-black-second;
-//     background-color: $color-disabled;
-//   }
-//   &__placeholder {
-//     text-shadow: 0 -1px 0 $color-black-second;
-//     background-color: $color-disabled-second;
-//     border-bottom: 1px solid $color-default-blue;
-//   }
-// }
-// option {
-//   display: flex;
-//   align-items: center;
-// }

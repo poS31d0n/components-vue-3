@@ -117,7 +117,7 @@ export default {
       testSelect: {
         disabled: false,
         label: "Your age?",
-        multiple: true,
+        multiple: false,
         options: [
           {id: 13, name: 'Child', value: 'child'},
           {id: 14, name: 'Tween', value: 'tween'},

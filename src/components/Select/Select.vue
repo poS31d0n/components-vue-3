@@ -1,15 +1,23 @@
 <template>
   <div class="select">
-    <p class="title" :placeholder="placeholder" @click="areOptionsVisable = !areOptionsVisable">{{ title.join(', ') }}</p>
-    <div class="options" v-if="areOptionsVisable">
-      <p
+    <div class="titles" @click="areOptionsVisable = !areOptionsVisable">
+      <p v-for="title in titles">{{ title }}</p>
+    </div>
+    <ul :class="'options', {}" v-if="areOptionsVisable">
+      <li
         v-for="item in options"
+        :class="[
+          'options__option',
+          { options__option_selected: titles.indexOf(item.name) >= 0 },
+        ]"
         :id="item.id"
         :value="item.value"
         :name="item.name"
-        @click="handleClick(item)"
-      >{{ item.name }}</p>
-    </div>
+        @click="handleClick(item.name)"
+      >
+        {{ item.name }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -18,8 +26,8 @@ export default {
   name: "Select",
   data() {
     return {
-      areOptionsVisable: true,
-      title: [],
+      areOptionsVisable: false,
+      titles: [],
     };
   },
   props: {
@@ -50,14 +58,28 @@ export default {
   },
   methods: {
     handleClick(option) {
-
-      if(this.title.indexOf(option.name) >= 0)
-        this.title.splice(this.title.indexOf(option.name), 1)
-      else this.title.push(option.name);
-      
-      this.$emit('select', this.title);
-    }
-  }
+      switch (this.multiple) {
+        case true:
+          if (this.titles.indexOf(option) >= 0)
+            this.titles.splice(this.titles.indexOf(option), 1);
+          else this.titles.push(option);
+          break;
+        case false:
+          this.titles = option.split();
+          break;
+      }
+      this.$emit("select", this.titles);
+    },
+    hideSelect() {
+      this.areOptionsVisable = false;
+    },
+  },
+  // mounted() {
+  //   document.addEventListener('click', this.hideSelect.bind(this), true)
+  // },
+  // beforeDestroy() {
+  //   document.removeEventListener('click', this.hideSelect)
+  // },
 };
 </script>
 
