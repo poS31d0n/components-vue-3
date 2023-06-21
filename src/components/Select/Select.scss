@@ -3,7 +3,7 @@
   width: 100%;
 
 
-  gap: 10px;
+  gap: 5px;
   display: flex;
   flex-direction: column;
 
@@ -55,6 +55,7 @@
   margin: 0;
   padding: 0;
 
+  
   cursor: pointer;
 
   border-radius: 5px;
@@ -62,6 +63,11 @@
 
   ::marker {
     color: transparent;
+  }
+
+  &_multiple{
+    height: 61px;
+    overflow: scroll;
   }
 
   &__option {

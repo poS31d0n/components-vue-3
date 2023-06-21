@@ -3,7 +3,7 @@
     <div class="titles" @click="areOptionsVisable = !areOptionsVisable">
       <p v-for="title in titles">{{ title }}</p>
     </div>
-    <ul :class="'options', {}" v-if="areOptionsVisable">
+    <ul :class="['options', {options_multiple: !multiple}]" v-if="areOptionsVisable">
       <li
         v-for="item in options"
         :class="[
