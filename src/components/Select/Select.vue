@@ -1,9 +1,13 @@
 <template>
   <div :class="['select', { select_disabled: disabled }]">
     <div :class="['select__titles']" @click="areOptionsVisable = !areOptionsVisable">
-      <p class="select__titles_placeholder" v-if="titles.length == 0">{{ placeholder }}</p>
-      <p class="select__titles_text" v-else v-for="title in titles">{{ title }}</p>
-      <div :class="['arrow', {arrow_top: areOptionsVisable}, {arrow_bottom: !areOptionsVisable} ]"></div>
+      <div class="select__titles_list">
+        <p class="select__titles_placeholder" v-if="titles.length == 0">{{ placeholder }}</p>
+        <p class="select__titles_text" v-else v-for="title in titles">{{ title }}</p>
+      </div>
+      <div class="select__titles_arrow">
+        <div :class="['arrow', {arrow_top: areOptionsVisable}, {arrow_bottom: !areOptionsVisable} ]"></div>
+      </div>
     </div>
 
     <ul :class="['options', {options_multiple: !multiple}]" v-if="areOptionsVisable && !disabled">
