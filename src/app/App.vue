@@ -115,7 +115,7 @@ export default {
       valueRadioGroup: '',
 
       testSelect: {
-        disabled: true,
+        disabled: false,
         label: "Your age?",
         multiple: false,
         options: [
