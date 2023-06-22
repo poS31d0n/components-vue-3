@@ -26,11 +26,16 @@
   
     border: 1px solid $color-border;
     border-radius: 5px;
+
+    padding: 3px;
   
     &:checked,
     &:not(:checked) {
       box-shadow: inset 0 1px 1px rgb($color-black, 0.075), 0 0 8px $color-default-blue;
     }
+
+    
+
     &_placeholder {
       display: flex;
       justify-content: center;
@@ -41,6 +46,8 @@
       border-radius: 5px;
   
       color: $color-disabled;
+
+      
     }
     &_text {
       display: flex;
@@ -90,7 +97,7 @@
   }
 
   &_multiple {
-    height: 61px;
+    height: 152.5px;
     overflow: scroll;
   }
 
@@ -122,4 +129,17 @@
       }
     }
   }
+}
+
+.arrow {
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid $color-primary;
+  border-right: 3px solid $color-primary;
+  margin-left: 225px;
+
+  &_top{ transform: rotate(-45deg);margin-top: 9px; }
+  &_bottom { transform: rotate(135deg);margin-top: 2px; }
 }
