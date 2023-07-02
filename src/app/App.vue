@@ -54,16 +54,21 @@
         :value="valueRadioGroup"
       />
     </div>
-    
+    <Tabs>
+      <Tab title="Tab 1">Hello from Tab 1</Tab>
+      <Tab title="Tab 2">Hello from Tab 2</Tab>
+      <Tab title="Tab 3">Hello from Tab 3</Tab>
+      <Tab title="Tab 4">Hello from Tab 4</Tab>
+    </Tabs>
   </div>
 </template>
 
 <script>
-import { Button, Checkbox, Input, Radio, CheckboxGroup, RadioGroup, Select } from "@/components";
+import { Button, Checkbox, Input, Radio, CheckboxGroup, RadioGroup, Select, Modal, Tab, Tabs } from "@/components";
 
 export default {
   name: "App",
-  components: { Button, Checkbox, Input, Radio, CheckboxGroup, RadioGroup, Select, Select },
+  components: { Button, Checkbox, Input, Radio, CheckboxGroup, RadioGroup, Select, Modal, Tab, Tabs },
   data() {
     return {
       inputElements: "",
