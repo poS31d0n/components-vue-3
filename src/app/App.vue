@@ -37,9 +37,10 @@
       :label="testSelect.label"
       :multiple="testSelect.multiple"
       :options="testSelect.options"
-      :placeholder="testSelect.placeholder"    
+      :placeholder="testSelect.placeholder"
       @select="selectOptions"
-    > </Select>
+    >
+    </Select>
 
     <div class="group">
       <CheckboxGroup
@@ -55,8 +56,13 @@
       />
     </div>
 
-    <Modal :title="testModal.title" :text="testModal.text" :buttons="testModal.buttons">
-    </Modal>
+    <Modal
+      @btnModalClick="clickBtnModal"
+      :title="testModal.title"
+      
+      :text="testModal.text"
+      :buttons="testModal.buttons"
+    />
 
     <Tabs>
       <Tab title="Tab 1">Hello from Tab 1</Tab>
@@ -68,11 +74,33 @@
 </template>
 
 <script>
-import { Button, Checkbox, Input, Radio, CheckboxGroup, RadioGroup, Select, Modal, Tab, Tabs } from "@/components";
+import {
+  Button,
+  Checkbox,
+  Input,
+  Radio,
+  CheckboxGroup,
+  RadioGroup,
+  Select,
+  Modal,
+  Tab,
+  Tabs,
+} from "@/components";
 
 export default {
   name: "App",
-  components: { Button, Checkbox, Input, Radio, CheckboxGroup, RadioGroup, Select, Modal, Tab, Tabs },
+  components: {
+    Button,
+    Checkbox,
+    Input,
+    Radio,
+    CheckboxGroup,
+    RadioGroup,
+    Select,
+    Modal,
+    Tab,
+    Tabs,
+  },
   data() {
     return {
       inputElements: "",
@@ -106,45 +134,45 @@ export default {
       },
 
       testCheckboxGroup: [
-        {id: 3, name: 'Games', value: 'games'},
-        {id: 4, name: 'Chess', value: 'chess'},
-        {id: 5, name: 'Football', value: 'football'},
-        {id: 6, name: 'Basketball', value: 'basketball'},
-        {id: 7, name: 'Hockey', value: 'hockey'},
+        { id: 3, name: "Games", value: "games" },
+        { id: 4, name: "Chess", value: "chess" },
+        { id: 5, name: "Football", value: "football" },
+        { id: 6, name: "Basketball", value: "basketball" },
+        { id: 7, name: "Hockey", value: "hockey" },
       ],
       valueCheckboxGroup: [],
 
       testRadioGroup: [
-        {id: 8, name: 'Bachelor', value: 'bachelor'},
-        {id: 9, name: 'Specialist-degree', value: 'specialist-degree'},
-        {id: 10, name: 'Postgraduate', value: 'postgraduate'},
-        {id: 11, name: 'Master', value: 'master'},
-        {id: 12, name: 'Doctorate', value: 'doctorate'},
+        { id: 8, name: "Bachelor", value: "bachelor" },
+        { id: 9, name: "Specialist-degree", value: "specialist-degree" },
+        { id: 10, name: "Postgraduate", value: "postgraduate" },
+        { id: 11, name: "Master", value: "master" },
+        { id: 12, name: "Doctorate", value: "doctorate" },
       ],
-      valueRadioGroup: '',
+      valueRadioGroup: "",
 
       testSelect: {
         disabled: false,
         label: "Your age?",
         multiple: true,
         options: [
-          {id: 13, name: 'Child', value: 'child'},
-          {id: 14, name: 'Tween', value: 'tween'},
-          {id: 15, name: 'Teenager', value: 'teenager'},
-          {id: 16, name: 'Young adult', value: 'young-adult'},
-          {id: 17, name: 'Middle aged', value: 'middle-aged'},
+          { id: 13, name: "Child", value: "child" },
+          { id: 14, name: "Tween", value: "tween" },
+          { id: 15, name: "Teenager", value: "teenager" },
+          { id: 16, name: "Young adult", value: "young-adult" },
+          { id: 17, name: "Middle aged", value: "middle-aged" },
         ],
         placeholder: "Select your age",
       },
-      valueSelect: '',
+      valueSelect: "",
 
       testModal: {
         buttons: [
-          {id: 21, name: 'Close', type: 'close', onClick: 'btnClose'},
-          {id: 22, name: 'Save', type: 'save', onClick: 'btnSave'}
+          { id: 21, name: "Close", type: "close", onClick: "btnClose" },
+          { id: 22, name: "Save", type: "save", onClick: "btnSave" },
         ],
-        text: 'Test modal component',
-        title: 'Hello world!',
+        text: "Test modal component",
+        title: "Hello world!",
       },
     };
   },
@@ -160,15 +188,22 @@ export default {
     getValueCheckbox(value) {
       if (this.valueCheckboxGroup.find((item) => item == value) === undefined)
         this.valueCheckboxGroup.push(value);
-      else this.valueCheckboxGroup.splice(this.valueCheckboxGroup.indexOf(value), 1);
+      else
+        this.valueCheckboxGroup.splice(
+          this.valueCheckboxGroup.indexOf(value),
+          1
+        );
     },
     getValueRadio(value) {
       this.valueRadioGroup = value;
     },
 
-
-    selectOptions(option){
-      this.valueSelect = option
+    selectOptions(option) {
+      this.valueSelect = option;
+    },
+    clickBtnModal(e, click) {
+      console.log(e.target);
+      console.log(click);
     }
   },
 };
