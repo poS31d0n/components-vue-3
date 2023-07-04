@@ -54,6 +54,10 @@
         :value="valueRadioGroup"
       />
     </div>
+
+    <Modal :title="testModal.title" :text="testModal.text" :buttons="testModal.buttons">
+    </Modal>
+
     <Tabs>
       <Tab title="Tab 1">Hello from Tab 1</Tab>
       <Tab title="Tab 2">Hello from Tab 2</Tab>
@@ -133,6 +137,15 @@ export default {
         placeholder: "Select your age",
       },
       valueSelect: '',
+
+      testModal: {
+        buttons: [
+          {id: 21, name: 'Close', type: 'close', onClick: 'btnClose'},
+          {id: 22, name: 'Save', type: 'save', onClick: 'btnSave'}
+        ],
+        text: 'Test modal component',
+        title: 'Hello world!',
+      },
     };
   },
   methods: {

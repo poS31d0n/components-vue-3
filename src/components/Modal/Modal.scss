@@ -1,0 +1,44 @@
+
+.modal{
+  border-radius: 5px;
+  border: 1px solid $color-border;
+
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    border-bottom: 1px solid $color-border;
+
+    &_title {
+      font-weight: bold;
+      padding: 10px 5px;
+    }
+  }
+  &__main {
+    border-bottom: 1px solid $color-border;
+
+    &_text {
+      padding: 10px 5px 20px 5px;
+      font-size: 12px;
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+
+    padding: 10px;
+
+    gap: 10px;
+
+    &_button {
+      list-style: none;
+
+      padding: 4px 8px;
+      border-radius: 5px;
+
+      font-size: 12px;
+
+      background-color: $color-border;
+    }
+  }
+}
