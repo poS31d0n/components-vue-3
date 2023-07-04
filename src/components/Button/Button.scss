@@ -1,42 +1,48 @@
 .button {
+	min-height: 22px;
+
 	border-color:		$color-black-second;
 	border-radius:	4px;
 
 	width: 100%;
 
+	border: none;
+
+
 	&:hover {background-color: $color-white-second}
 
+	&-default {
+		color: 						$color-black;
+    background-color: $color-white-second;
+    border-color: 	  $color-black-second;
+		&:hover 					{background-color: $color-black-second}
+	}
 	&-primary {
 		color: 						$color-white;
-		text-shadow:			0 -1px 0 $color-black-second;
 		background-color: $color-primary;
 		border-color:			$color-black-second;
 		&:hover 					{background-color: $color-info-second}
 	}
 	&-info {
 		color: 						$color-white;
-    text-shadow: 			0 -1px 0 $color-black-second;
     background-color: $color-info;
     border-color: 	  $color-black-second;
 		&:hover 					{background-color: $color-info-second}
 	}
 	&-warning {
 		color: 						$color-white;
-    text-shadow: 			0 -1px 0 $color-black-second;
     background-color: $color-warning;
 		border-color: 	  $color-black-second;
 		&:hover 					{background-color: $color-warning-second}
 	}
 	&-success {
 		color: 						$color-white;
-    text-shadow: 			0 -1px 0 $color-black-second;
     background-color: $color-success;
 		border-color: 	  $color-black-second;
 		&:hover 					{background-color: $color-success-second}
 	}
 	&_disabled {
 		color: 						$color-white;
-    text-shadow: 			0 -1px 0 $color-black-second;
     background-color: $color-disabled;
 		border-color: 		$color-black-second;
 		&:hover 					{background-color: $color-disabled}
