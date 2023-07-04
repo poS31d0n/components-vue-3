@@ -56,13 +56,17 @@
       />
     </div>
 
+    <Button class="button" @click="testModal.openModal = true" type="default">Open Modal</Button>
     <Modal
-      @btnModalClick="clickBtnModal"
+      v-if="testModal.openModal"
+      @close="testModal.openModal = false"
       :title="testModal.title"
       
       :text="testModal.text"
       :buttons="testModal.buttons"
-    />
+    >
+    
+    </Modal>
 
     <Tabs>
       <Tab title="Tab 1">Hello from Tab 1</Tab>
@@ -168,15 +172,23 @@ export default {
 
       testModal: {
         buttons: [
-          { id: 21, name: "Close", type: "close", onClick: "btnClose" },
-          { id: 22, name: "Save", type: "save", onClick: "btnSave" },
+          { id: 21, name: "Close", type: "default", onClick: () => this.btnClose () , },
+          { id: 22, name: "Save", type: "primary", onClick: () => this.btnSave () },
         ],
         text: "Test modal component",
         title: "Hello world!",
+        openModal: false,
       },
+      
     };
   },
   methods: {
+    btnClose() {
+      this.testModal.openModal = false;
+    },
+    btnSave() {
+    
+    },
     getValue(itemCheckbox) {
       if (this.dataCheckbox.find((item) => item == itemCheckbox) === undefined)
         this.dataCheckbox.push(itemCheckbox);
@@ -201,10 +213,6 @@ export default {
     selectOptions(option) {
       this.valueSelect = option;
     },
-    clickBtnModal(e, click) {
-      console.log(e.target);
-      console.log(click);
-    }
   },
 };
 </script>

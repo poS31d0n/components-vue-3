@@ -1,9 +1,7 @@
 <template>
-  <button class="button" @click="open = true">Open Modal</button>
-
   <Teleport to="body">
-    <div v-if="open" class="modal">
-      <div class="modal__container">
+    <div class="modal">
+      <div class="modal__container" ref="target">
         <slot name="title">
           <div class="modal__container__header">
             <div class="modal__container__header_title">{{ title }}</div>
@@ -16,14 +14,14 @@
         </slot>
         <slot name="buttons">
           <div class="modal__container__footer">
-            <button
+            <Button
               v-for="button in buttons"
+              :type="button.type"
               :key="button.id"
-              :class="['button', `button_${button.type}`]"
-              @click="clickModal($event, button.onClick), (open = false)"
+              @click="button.onClick"
             >
               {{ button.name }}
-            </button>
+            </Button>
           </div>
         </slot>
       </div>
@@ -32,15 +30,13 @@
 </template>
 
 <script>
-import { defineProps, defineEmits } from "vue";
+import { ref } from 'vue'
+import { onClickOutside } from '@vueuse/core'
+import { Button } from '..';
 
 export default {
   name: "Modal",
-  data() {
-    return {
-      open: false,
-    };
-  },
+  components: { Button },
   props: {
     buttons: {
       default: [],
@@ -55,15 +51,13 @@ export default {
       type: String,
     },
   },
-  emits: ["btnModalClick"],
-  methods: {
-    hide() {
-      console.log("click registered");
-      this.$emit("close");
-    },
-    clickModal(event, click) {
-      this.$emit("btnModalClick", event, click);
-    },
+  emits: ['close'],
+  setup({ emit }) {
+    const target = ref (null);
+    onClickOutside(target, (event) => emit('close'));
+    return {
+      target,
+    };
   },
 };
 </script>
