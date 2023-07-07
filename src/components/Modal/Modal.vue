@@ -3,17 +3,19 @@
     <div class="modal">
       <div class="modal__container" ref="target">
         <slot name="title">
-          <div class="modal__container__header">
-            <div class="modal__container__header_title">{{ title }}</div>
+          <div class="header">
+            <div class="header_title">{{ title }}</div>
           </div>
         </slot>
-        <slot name="text">
-          <div class="modal__container__main">
-            <div class="modal__container__main_text">{{ text }}</div>
-          </div>
-        </slot>
-        <slot name="buttons">
-          <div class="modal__container__footer">
+
+        <div class="main">
+          <slot name="text">
+            <div class="main_text">{{ text }}</div>
+          </slot>
+        </div>
+
+        <div class="footer">
+          <slot name="buttons">
             <Button
               v-for="button in buttons"
               :type="button.type"
@@ -22,17 +24,17 @@
             >
               {{ button.name }}
             </Button>
-          </div>
-        </slot>
+          </slot>
+        </div>
       </div>
     </div>
   </Teleport>
 </template>
 
 <script>
-import { ref } from 'vue'
-import { onClickOutside } from '@vueuse/core'
-import { Button } from '..';
+import { ref } from "vue";
+import { onClickOutside } from "@vueuse/core";
+import { Button } from "..";
 
 export default {
   name: "Modal",
@@ -51,10 +53,10 @@ export default {
       type: String,
     },
   },
-  emits: ['close'],
-  setup({ emit }) {
-    const target = ref (null);
-    onClickOutside(target, (event) => emit('close'));
+  emits: ["close"],
+  setup(props, { emit }) {
+    const target = ref(null);
+    onClickOutside(target, (event) => emit("close"));
     return {
       target,
     };

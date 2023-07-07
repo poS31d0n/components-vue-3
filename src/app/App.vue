@@ -22,6 +22,7 @@
       :id="testRadio.id"
       :value="testRadio.value"
       :checked="testRadio.checked"
+      :name="testRadio.name"
     />
 
     <Input
@@ -61,11 +62,11 @@
       v-if="testModal.openModal"
       @close="testModal.openModal = false"
       :title="testModal.title"
-      
       :text="testModal.text"
-      :buttons="testModal.buttons"
     >
-    
+      <template v-slot:buttons>
+        <Button v-for="item in testModal.buttons" :key="item.id" :type="item.type"> {{ item.name }}</Button>
+      </template>
     </Modal>
 
     <Tabs>
@@ -128,6 +129,7 @@ export default {
         id: 2,
         label: "Male",
         value: "male",
+        name: 'radio',
       },
 
       testInput: {
@@ -146,13 +148,16 @@ export default {
       ],
       valueCheckboxGroup: [],
 
-      testRadioGroup: [
-        { id: 8, name: "Bachelor", value: "bachelor" },
-        { id: 9, name: "Specialist-degree", value: "specialist-degree" },
-        { id: 10, name: "Postgraduate", value: "postgraduate" },
-        { id: 11, name: "Master", value: "master" },
-        { id: 12, name: "Doctorate", value: "doctorate" },
-      ],
+      testRadioGroup: {
+        name: 'radioGroup',
+        items: [
+          { id: 8, name: "Bachelor", value: "bachelor" },
+          { id: 9, name: "Specialist-degree", value: "specialist-degree" },
+          { id: 10, name: "Postgraduate", value: "postgraduate" },
+          { id: 11, name: "Master", value: "master" },
+          { id: 12, name: "Doctorate", value: "doctorate" },
+        ]
+      },
       valueRadioGroup: "",
 
       testSelect: {

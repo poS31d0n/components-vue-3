@@ -1,11 +1,11 @@
 <template>
   <div :class="['select', { select_disabled: disabled }]">
-    <div :class="['select__titles']" @click="areOptionsVisable = !areOptionsVisable">
-      <div class="select__titles_list">
-        <p class="select__titles_placeholder" v-if="titles.length == 0">{{ placeholder }}</p>
-        <p class="select__titles_text" v-else v-for="title in titles">{{ title }}</p>
+    <div class="select-titles" @click="areOptionsVisable = !areOptionsVisable">
+      <div class="select-titles__list">
+        <p class="list_placeholder" v-if="titles.length == 0">{{ placeholder }}</p>
+        <p class="list_text" v-else v-for="title in titles">{{ title }}</p>
       </div>
-      <div class="select__titles_arrow">
+      <div class="select-titles__arrow">
         <div :class="['arrow', {arrow_top: areOptionsVisable}, {arrow_bottom: !areOptionsVisable} ]"></div>
       </div>
     </div>
@@ -14,8 +14,8 @@
       <li
         v-for="item in options"
         :class="[
-          'options__option',
-          { options__option_selected: titles.indexOf(item.name) >= 0 },
+          'item',
+          { item_selected: titles.indexOf(item.name) >= 0 },
         ]"
         :id="item.id"
         :value="item.value"

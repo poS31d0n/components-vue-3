@@ -1,11 +1,12 @@
 <template>
   <div class="radioGroup">
     <Radio
-      v-for="item in items"
+      v-for="item in items.items"
       :id="item.id"
       :key="item.id"
       :label="item.name"
       :value="item.value"
+      :name="items.name"
       @clickRadio="getValue"
     />
   </div>
@@ -18,7 +19,7 @@ export default {
   name: 'RadioGroup',
   props: {
     items: {
-      default: [],
+      default: {},
       type: Array,
     },
     value: {

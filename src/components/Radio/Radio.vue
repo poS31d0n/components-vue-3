@@ -4,7 +4,7 @@
       @click="inputR"
       class="radio__input"
       type="radio"
-      name="radio"
+      :name="name"
       :checked="checked"
       :value="value"
       :id="id"
@@ -34,6 +34,10 @@ export default {
       default: "",
       type: String,
     },
+    name: {
+      default: "",
+      type: String,
+    }
   },
   emits: ["clickRadio"],
   methods: {
