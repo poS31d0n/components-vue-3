@@ -65,7 +65,7 @@
       :text="testModal.text"
     >
       <template v-slot:buttons>
-        <Button v-for="item in testModal.buttons" :key="item.id" :type="item.type"> {{ item.name }}</Button>
+        <Button v-for="item in testModal.buttons" :key="item.id" :type="item.type" @click="item.onClick"> {{ item.name }}</Button>
       </template>
     </Modal>
 
@@ -150,7 +150,7 @@ export default {
 
       testRadioGroup: {
         name: 'radioGroup',
-        items: [
+        radios: [
           { id: 8, name: "Bachelor", value: "bachelor" },
           { id: 9, name: "Specialist-degree", value: "specialist-degree" },
           { id: 10, name: "Postgraduate", value: "postgraduate" },
@@ -189,10 +189,11 @@ export default {
   },
   methods: {
     btnClose() {
+      console.log('close');
       this.testModal.openModal = false;
     },
     btnSave() {
-    
+      console.log('save');
     },
     getValue(itemCheckbox) {
       if (this.dataCheckbox.find((item) => item == itemCheckbox) === undefined)
