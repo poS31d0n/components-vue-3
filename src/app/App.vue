@@ -75,6 +75,8 @@
       <Tab title="Tab 3">Hello from Tab 3</Tab>
       <Tab title="Tab 4">Hello from Tab 4</Tab>
     </Tabs>
+
+    <Table :cols="testTable.cols" :rows="testTable.rows" :title="testTable.title" @cellClick="getTableItem"></Table>
   </div>
 </template>
 
@@ -90,6 +92,7 @@ import {
   Modal,
   Tab,
   Tabs,
+  Table,
 } from "@/components";
 
 export default {
@@ -105,6 +108,7 @@ export default {
     Modal,
     Tab,
     Tabs,
+    Table,
   },
   data() {
     return {
@@ -149,14 +153,14 @@ export default {
       valueCheckboxGroup: [],
 
       testRadioGroup: {
-        name: 'radioGroup',
         radios: [
           { id: 8, name: "Bachelor", value: "bachelor" },
           { id: 9, name: "Specialist-degree", value: "specialist-degree" },
           { id: 10, name: "Postgraduate", value: "postgraduate" },
           { id: 11, name: "Master", value: "master" },
           { id: 12, name: "Doctorate", value: "doctorate" },
-        ]
+        ],
+        name: 'radioGroup',
       },
       valueRadioGroup: "",
 
@@ -185,6 +189,16 @@ export default {
         openModal: false,
       },
       
+      testTable : {
+        cols: ["name", "power"],
+        rows: [
+          { name: "Chuck Norris", power: Infinity },
+          { sdsd: "Bruce Lee", power: 9000 },
+          { name: "Jackie Chan", power: 7000 },
+          { name: "Jet Li", power: 8000 },
+        ],
+        title: "Table",
+      },
     };
   },
   methods: {
@@ -219,6 +233,9 @@ export default {
     selectOptions(option) {
       this.valueSelect = option;
     },
+    getTableItem(tableItem) {
+      console.log(tableItem);
+    }
   },
 };
 </script>
