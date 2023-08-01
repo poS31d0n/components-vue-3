@@ -41,7 +41,7 @@ export default {
   components: { Button },
   props: {
     buttons: {
-      default: [],
+      default: () => [],
       type: Array,
     },
     text: {

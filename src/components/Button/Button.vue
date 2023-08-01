@@ -5,6 +5,7 @@
     :title="tooltip"
     @click="clickB"
   >
+    {{ title }}
     <slot></slot>
   </button>
 </template>

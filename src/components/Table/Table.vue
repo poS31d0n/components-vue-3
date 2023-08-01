@@ -18,11 +18,11 @@
 export default {
   props: {
     cols: {
-      default: [],
+      default: () => [],
       type: Array,
     },
     rows: {
-      default: [],
+      default: () => [],
       type: Array,
     },
     title: {

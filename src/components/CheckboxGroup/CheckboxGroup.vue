@@ -19,11 +19,11 @@ export default {
   name: "CheckboxGroup",
   props: {
     items: {
-      default: [],
+      default: () => [],
       type: Array,
     },
     value: {
-      default: [],
+      default: () => [],
       type: Array,
     },
   },
